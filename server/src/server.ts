@@ -266,6 +266,16 @@ connection.onCompletion(
 						data: 5
 					}
 				);
+
+				let instructionRegex = /INSTRUCTION (.*?) IS/g;
+				let match: RegExpMatchArray | null;
+
+				while((match = instructionRegex.exec(text)) !== null) {
+					completions.push({
+						label: match[1],
+						kind: CompletionItemKind.Function
+					});
+				}
 			}
 		}
 

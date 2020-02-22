@@ -8,11 +8,11 @@
 	"categories": [
 		"Programming Languages"
 	],
-	"keywords": [
-		"multi-root ready"
-	],
 	"engines": {
 		"vscode": "^1.33.0"
+	},
+	"repository": {
+		"url": "https://github.com/AHerridge/bugworldlang"
 	},
 	"activationEvents": [
 		"onLanguage:bugworld"

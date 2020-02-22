@@ -7,17 +7,18 @@ Language Support for OSU's BugWorld langauge
 * Syntax Highlighting
 * Snippets
 * Autocomplete for built-ins
-
-## Known Issues
-
-None
+* Autocomplete for user-defined instructions
 
 ## Release Notes
+
+### 0.0.3
+
+Added basic autocompletion for user-defined instructions
+
+### 0.0.2
+
+Added basic autocompletion for built-in instructions
 
 ### 0.0.1
 
 Added basic syntax highlighting and snippets
-
-### 0.0.2
-
-Added basic autocompletion suggestions
