@@ -1,0 +1,14 @@
+{
+	"name": "bugworldlang-server",
+	"description": "Server implementation of the BugWorld language server.",
+	"version": "0.0.2",
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"engines": {
+		"node": "*"
+	},
+	"dependencies": {
+		"vscode-languageserver": "^5.2.1"
+	},
+	"scripts": {}
+}

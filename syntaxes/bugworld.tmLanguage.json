@@ -1,0 +1,87 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "BugWorld",
+	
+	"patterns": [
+		{
+			"include": "#control keywords"
+		},
+		{
+			"include": "#built-in conditionals"
+		},
+		{
+			"include": "#built-in instructions"
+		},
+		{
+			"include": "#custom instructions"
+		},
+		{
+			"include": "#instruction structure"
+		},
+		{
+			"include": "#program structure"
+		}
+	],
+	"repository": {
+		"control keywords": {
+			"patterns": [{
+				"name": "keyword.control.bugworld",
+				"match": "(END )?(IF|THEN|ELSE|WHILE|DO)"
+			}]
+		},
+		"built-in instructions": {
+			"patterns": [{
+				"name": "support.function.bugworld",
+				"match": "(move|turnleft|turnright|infect|skip)"
+			}]
+		},
+		"custom instructions": {
+			"patterns": [{
+				"name": "support.function.bugworld",
+				"match": "^(?:\\s)+(?!ELSE|BEGIN)(\\w*?)$"
+			}]
+		},
+		"built-in conditionals": {
+			"patterns": [{
+				"name": "support.variable.bugworld",
+				"match": "(next-is-empty|next-is-not-empty|next-is-enemy|next-is-not-enemy|next-is-friend|next-is-not-friend|next-is-wall|next-is-not-wall|true|random)"
+			}]
+		},
+		"instruction structure": {
+			"patterns": [
+				{
+					"name": "storage.type.bugworld",
+					"match": "INSTRUCTION (.*?) IS",
+					"captures": {
+						"1" : {
+							"name" : "entity.name.function.bugworld"
+						}
+					}
+				},
+				{
+					"name": "storage.type.bugworld",
+					"match": ".END (?!.*\\bWHILE|IF\\b)(.*)",
+					"captures": {
+						"1" : {
+							"name" : "entity.name.function.bugworld"
+						}
+					}
+				}
+			]
+		},
+		"program structure": {
+			"patterns": [
+				{
+					"name": "storage.type.bugworld",
+					"match": "^(PROGRAM|BEGIN|END)(.*?)?(IS)?$",
+					"captures": {
+						"2" : {
+							"name" : "entity.name.type.bugworld"
+						}
+					}
+				}
+			]
+		}
+	},
+	"scopeName": "source.bl"
+}

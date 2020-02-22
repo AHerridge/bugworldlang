@@ -1,0 +1,22 @@
+{
+	"While Loop": {
+		"prefix": ["WHILE", "while"],
+		"body": ["WHILE $1 DO", "\t$0", "END WHILE"],
+		"description": "A while loop."
+	},
+	"If Statement": {
+		"prefix": ["IF", "if"],
+		"body": ["IF $1 THEN", "\t$0", "END IF"],
+		"description": "An if statement."
+	},
+	"Instruction Definition": {
+		"prefix": ["INSTRUCTION", "inst"],
+		"body": ["INSTRUCTION ${1:name} IS", "\t$0", "END $1"],
+		"description": "An instruction definition."
+	},
+	"Program Definition": {
+		"prefix": ["PROGRAM", "prog"],
+		"body": ["PROGRAM $TM_FILENAME_BASE IS", "\t$1", "BEGIN", "\tWHILE true DO", "\t\t$0", "\tEND WHILE","END $TM_FILENAME_BASE"],
+		"description": "A program definition."
+	}
+}
